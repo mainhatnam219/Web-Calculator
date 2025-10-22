@@ -1,0 +1,508 @@
+/* ===================================
+   WINDOWS 11 CALCULATOR - CSS STYLES
+   =================================== */
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Windows 11 Color Palette */
+    --bg-primary: #f3f3f3;
+    --bg-calculator: #f3f3f3;
+    --bg-display: #f9f9f9;
+    --text-primary: #000000;
+    --text-secondary: #737373;
+    --btn-number-bg: #fafafa;
+    --btn-number-hover: #f5f5f5;
+    --btn-number-active: #e5e5e5;
+    --btn-operator-bg: #f5f5f5;
+    --btn-operator-hover: #e9e9e9;
+    --btn-equals-bg: #0078d4;
+    --btn-equals-hover: #106ebe;
+    --btn-equals-active: #005a9e;
+    --btn-function-bg: #fafafa;
+    --btn-function-hover: #f5f5f5;
+    --border-color: #e0e0e0;
+    --shadow: rgba(0, 0, 0, 0.1);
+    
+    /* Typography */
+    --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --font-display: 'Segoe UI', sans-serif;
+    
+    /* Sizing */
+    --calculator-width: 350px;
+    --button-size: 70px;
+    --button-gap: 4px;
+    --border-radius: 8px;
+    --border-radius-small: 4px;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--bg-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Calculator Container */
+.calculator-container {
+    width: 100%;
+    max-width: var(--calculator-width);
+    display: flex;
+    justify-content: center;
+}
+
+.calculator {
+    width: 100%;
+    background: var(--bg-calculator);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px var(--shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.calculator-header {
+    padding: 16px 20px;
+    background: var(--bg-calculator);
+}
+
+.calculator-header h1 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: 0.3px;
+}
+
+/* Display Area */
+.display {
+    padding: 20px;
+    background: var(--bg-display);
+    text-align: right;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 8px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.display-secondary {
+    font-size: 14px;
+    color: var(--text-secondary);
+    min-height: 20px;
+    font-weight: 400;
+    opacity: 0.8;
+    font-family: var(--font-display);
+}
+
+.display-primary {
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-family: var(--font-display);
+    line-height: 1.2;
+    min-height: 58px;
+}
+
+/* Memory Indicators */
+.memory-indicators {
+    padding: 8px 20px;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.memory-indicator {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+/* Button Grid */
+.button-grid {
+    padding: 8px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--button-gap);
+    background: var(--bg-calculator);
+}
+
+/* Button Base Styles */
+.btn {
+    height: var(--button-size);
+    border: 1px solid transparent;
+    border-radius: var(--border-radius-small);
+    font-size: 18px;
+    font-weight: 400;
+    font-family: var(--font-family);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Number Buttons */
+.btn-number {
+    background: var(--btn-number-bg);
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.btn-number:hover {
+    background: var(--btn-number-hover);
+    border-color: var(--border-color);
+}
+
+.btn-number:active {
+    background: var(--btn-number-active);
+}
+
+/* Operator Buttons */
+.btn-operator {
+    background: var(--btn-operator-bg);
+    color: var(--text-primary);
+    font-size: 20px;
+}
+
+.btn-operator:hover {
+    background: var(--btn-operator-hover);
+    border-color: var(--border-color);
+}
+
+.btn-operator:active {
+    background: var(--btn-number-active);
+}
+
+/* Function Buttons */
+.btn-function {
+    background: var(--btn-function-bg);
+    color: var(--text-primary);
+    font-size: 16px;
+}
+
+.btn-function:hover {
+    background: var(--btn-function-hover);
+    border-color: var(--border-color);
+}
+
+.btn-function:active {
+    background: var(--btn-number-active);
+}
+
+/* Equals Button */
+.btn-equals {
+    background: var(--btn-equals-bg);
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.btn-equals:hover {
+    background: var(--btn-equals-hover);
+}
+
+.btn-equals:active {
+    background: var(--btn-equals-active);
+}
+
+/* Backspace Icon */
+.backspace-icon {
+    font-size: 20px;
+}
+
+/* Active/Selected State */
+.btn.active {
+    background: var(--btn-equals-bg);
+    color: white;
+}
+
+/* Disabled State */
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Error State */
+.display-primary.error {
+    color: #d13438;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+/* Desktop: 1024px+ (Default styles above) */
+@media screen and (min-width: 1024px) {
+    .calculator-container {
+        max-width: var(--calculator-width);
+    }
+    
+    .display-primary {
+        font-size: 48px;
+    }
+    
+    .btn {
+        height: var(--button-size);
+        font-size: 18px;
+    }
+    
+    .btn-operator,
+    .btn-equals {
+        font-size: 20px;
+    }
+}
+
+/* Tablet: 768px - 1023px */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    :root {
+        --calculator-width: 400px;
+        --button-size: 80px;
+        --button-gap: 6px;
+    }
+    
+    .calculator-header h1 {
+        font-size: 16px;
+    }
+    
+    .display {
+        min-height: 130px;
+        padding: 24px;
+    }
+    
+    .display-secondary {
+        font-size: 16px;
+    }
+    
+    .display-primary {
+        font-size: 52px;
+    }
+    
+    .btn {
+        font-size: 20px;
+    }
+    
+    .btn-operator,
+    .btn-equals {
+        font-size: 24px;
+    }
+    
+    .btn-function {
+        font-size: 18px;
+    }
+}
+
+/* Mobile: 320px - 767px */
+@media screen and (max-width: 767px) {
+    :root {
+        --calculator-width: 100%;
+        --button-size: 70px;
+        --button-gap: 4px;
+    }
+    
+    body {
+        padding: 0;
+        align-items: flex-start;
+    }
+    
+    .calculator-container {
+        max-width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+    
+    .calculator {
+        border-radius: 0;
+        box-shadow: none;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .calculator-header {
+        padding: 12px 16px;
+    }
+    
+    .calculator-header h1 {
+        font-size: 14px;
+    }
+    
+    .display {
+        min-height: 110px;
+        padding: 16px 20px;
+    }
+    
+    .display-secondary {
+        font-size: 13px;
+        min-height: 18px;
+    }
+    
+    .display-primary {
+        font-size: 40px;
+        min-height: 48px;
+    }
+    
+    .memory-indicators {
+        padding: 6px 16px;
+    }
+    
+    .button-grid {
+        padding: 8px;
+    }
+    
+    .btn {
+        font-size: 17px;
+        height: var(--button-size);
+        /* Touch-friendly: Larger touch targets */
+        min-height: 60px;
+    }
+    
+    .btn-operator,
+    .btn-equals {
+        font-size: 20px;
+    }
+    
+    .btn-function {
+        font-size: 15px;
+    }
+    
+    .backspace-icon {
+        font-size: 18px;
+    }
+}
+
+/* Extra Small Mobile: 320px - 374px */
+@media screen and (max-width: 374px) {
+    :root {
+        --button-size: 60px;
+        --button-gap: 3px;
+    }
+    
+    .display {
+        min-height: 100px;
+        padding: 12px 16px;
+    }
+    
+    .display-primary {
+        font-size: 36px;
+        min-height: 43px;
+    }
+    
+    .display-secondary {
+        font-size: 12px;
+    }
+    
+    .btn {
+        font-size: 16px;
+        min-height: 55px;
+    }
+    
+    .btn-operator,
+    .btn-equals {
+        font-size: 18px;
+    }
+    
+    .btn-function {
+        font-size: 14px;
+    }
+}
+
+/* Large Desktop: 1440px+ */
+@media screen and (min-width: 1440px) {
+    :root {
+        --calculator-width: 380px;
+        --button-size: 75px;
+    }
+    
+    .display-primary {
+        font-size: 52px;
+    }
+}
+
+/* Landscape Mode for Mobile */
+@media screen and (max-width: 767px) and (orientation: landscape) {
+    .calculator-container {
+        height: auto;
+        padding: 10px 0;
+    }
+    
+    .calculator {
+        max-width: 450px;
+    }
+    
+    .display {
+        min-height: 80px;
+        padding: 12px 16px;
+    }
+    
+    .display-primary {
+        font-size: 32px;
+        min-height: 38px;
+    }
+    
+    .display-secondary {
+        font-size: 11px;
+    }
+    
+    .btn {
+        min-height: 50px;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .btn {
+        border: 2px solid var(--text-primary);
+    }
+    
+    .btn-equals {
+        border-color: var(--btn-equals-bg);
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .btn {
+        transition: none;
+    }
+    
+    .btn:active {
+        transform: none;
+    }
+}
+
+/* Focus Styles for Accessibility */
+.btn:focus-visible {
+    outline: 2px solid var(--btn-equals-bg);
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+    }
+    
+    .calculator {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 11 Calculator - Basic Mode</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="calculator">
+            <!-- Calculator Header -->
+            <header class="calculator-header">
+                <h1>Calculator</h1>
+            </header>
+
+            <!-- Display Area -->
+            <div class="display">
+                <!-- Secondary Display - Shows previous operation -->
+                <div class="display-secondary" id="secondaryDisplay"></div>
+                <!-- Primary Display - Shows current input/result -->
+                <div class="display-primary" id="primaryDisplay">0</div>
+            </div>
+
+            <!-- Memory Indicators (Optional - for visual completeness) -->
+            <div class="memory-indicators">
+                <span class="memory-indicator" id="memoryIndicator"></span>
+            </div>
+
+            <!-- Button Grid -->
+            <div class="button-grid">
+                <!-- Row 1: Memory and Clear Functions -->
+                <button class="btn btn-function" data-action="percent" aria-label="Percent">%</button>
+                <button class="btn btn-function" data-action="clear-entry" aria-label="Clear Entry">CE</button>
+                <button class="btn btn-function" data-action="clear" aria-label="Clear">C</button>
+                <button class="btn btn-function" data-action="backspace" aria-label="Backspace">
+                    <span class="backspace-icon">⌫</span>
+                </button>
+
+                <!-- Row 2: Special Functions -->
+                <button class="btn btn-function" data-action="reciprocal" aria-label="Reciprocal">1/x</button>
+                <button class="btn btn-function" data-action="square" aria-label="Square">x²</button>
+                <button class="btn btn-function" data-action="square-root" aria-label="Square Root">√x</button>
+                <button class="btn btn-operator" data-operator="/" aria-label="Divide">÷</button>
+
+                <!-- Row 3: Numbers 7-9 and Multiply -->
+                <button class="btn btn-number" data-number="7" aria-label="Seven">7</button>
+                <button class="btn btn-number" data-number="8" aria-label="Eight">8</button>
+                <button class="btn btn-number" data-number="9" aria-label="Nine">9</button>
+                <button class="btn btn-operator" data-operator="*" aria-label="Multiply">×</button>
+
+                <!-- Row 4: Numbers 4-6 and Subtract -->
+                <button class="btn btn-number" data-number="4" aria-label="Four">4</button>
+                <button class="btn btn-number" data-number="5" aria-label="Five">5</button>
+                <button class="btn btn-number" data-number="6" aria-label="Six">6</button>
+                <button class="btn btn-operator" data-operator="-" aria-label="Subtract">−</button>
+
+                <!-- Row 5: Numbers 1-3 and Add -->
+                <button class="btn btn-number" data-number="1" aria-label="One">1</button>
+                <button class="btn btn-number" data-number="2" aria-label="Two">2</button>
+                <button class="btn btn-number" data-number="3" aria-label="Three">3</button>
+                <button class="btn btn-operator" data-operator="+" aria-label="Add">+</button>
+
+                <!-- Row 6: Negate, 0, Decimal, Equals -->
+                <button class="btn btn-function" data-action="negate" aria-label="Negate">±</button>
+                <button class="btn btn-number" data-number="0" aria-label="Zero">0</button>
+                <button class="btn btn-number" data-action="decimal" aria-label="Decimal Point">.</button>
+                <button class="btn btn-equals" data-action="equals" aria-label="Equals">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
